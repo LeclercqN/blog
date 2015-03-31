@@ -39,4 +39,4 @@ var post2 = {
 db.post.insert(post);
 db.post.insert(post2);
 
-db.user.insert({ user: 'admin', pass: '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918'});
+db.user.insert({ user: 'admin', pass: 'b5c3cf2a3d16d391c8051abbf008c5c39c0957da2ff39fbb2655ac17bebe06cf'});
