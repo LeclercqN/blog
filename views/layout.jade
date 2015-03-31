@@ -4,13 +4,21 @@ html
     link(rel='stylesheet', href='/stylesheets/reset.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    div#header
+    div#header EPSI BINCH
+      img(src="../images/gros.jpg").imgMenu
+    div#menu
+      div#connection
+            - if (user)
+              a(href="/post/add").boutonadd Add post
+              span |
+              a(href="/logout").boutonLogOut Logout #{user.user}          
+            - else 
+              a(href="/login").boutonLogIn Login
+      div#identification
+            img(src="../images/profil.png").imgProfil
+            span bienvenue, #{user.user}
     div#container!= body
-    div#footer
-        div
-          - if (user)
-            a(href="/logout") Logout #{user.user}
-            span |
-            a(href="/post/add") Add post
-          - else 
-            a(href="/login") Login
+    div#footer 
+      div#info Propriété des développeurs de l'EPSI
+      div#propriete EPSIBINCH @ 2015 
+        
