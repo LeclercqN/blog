@@ -16,7 +16,11 @@ html
               a(href="/login").boutonLogIn Login
       div#identification
             img(src="../images/profil.png").imgProfil
-            span bienvenue, #{user.user}
+            span bienvenue,
+              - if (user)
+                span #{user.user}
+              - else
+                span  invité
     div#container!= body
     div#footer 
       div#info Propriété des développeurs de l'EPSI
