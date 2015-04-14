@@ -138,3 +138,7 @@ h2 {
 	font-size: 10px;
 	float: right;
 }
+
+.input-group-addon{
+	border-right: 0px;
+}
