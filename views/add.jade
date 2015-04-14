@@ -1,18 +1,18 @@
 h1 Adding new blog post
 
-form(name="add-post",method="post",action="/post/add")
-  div.row
+form(name="add-post",method="post",action="/post/add").col-md-5.col-md-offset-3
+  div.form-group
     div
-      label Subject:
-    input(type="text",name="subject")
-  div.row
+      label.input-group-addon Subject:
+    input(type="text",name="subject").form-control
+  div.form-group
     div
-      label Content
+      label.input-group-addon Content
     textarea(name="body", rows="10", cols="30")
-  div.row
+  div.form-group
     div
-      label Tags (comma-separated)
-    input(type="text",name="tags")
+      label.input-group-addon Tags (comma-separated)
+    input(type="text",name="tags").form-control
      
-  div.row
-    input(type="submit",name="post",value="Post")
+  div.form-group
+    input(type="submit",name="post",value="Ajouter").btn.btn-success

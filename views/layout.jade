@@ -9,11 +9,9 @@ html
     div#menu
       div#connection
             - if (user)
-              a(href="/post/add").btn.btn-primary Add post
+              a(href="/post/add").btn.btn-primary Ajouter un article
               span |
-              a(href="/logout").btn.btn-danger Logout #{user.user}          
-            - else 
-              a(href="/login").btn.btn-success Login
+              a(href="/logout").btn.btn-danger Déconnexion         
       div#identification
             img(src="../images/profil.png").imgProfil
             span bienvenue,

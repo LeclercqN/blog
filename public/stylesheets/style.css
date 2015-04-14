@@ -138,10 +138,6 @@ h2 {
 	padding: 30px 30px 15px 30px;
 }
 
-#info{
-	
-}
-
 .heurepost{
 	color: blue;
 	font-size: 10px;
@@ -149,5 +145,6 @@ h2 {
 }
 
 .input-group-addon{
-	border-right: 0px;
+	border-right: -1px;
+	border-left: -1px;
 }
