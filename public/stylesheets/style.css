@@ -67,13 +67,6 @@ h2 {
 	background-color: #2f3440;
 }
 
-.imgMenu{
-	height: 50px;
-	width: 80px;
-	float: left;
-	margin-left: 10%;
-}
-
 #identification{
 	margin-left: 100px;
 	padding : 13px 10px;
@@ -127,7 +120,7 @@ h2 {
 
 .sujet{
 	text-align: center;
-	color: #97999f;
+	color: #fff;
 	padding: 8px 0px;
 	background-color: #4285f4;
 	margin: 0;
@@ -144,7 +137,3 @@ h2 {
 	float: right;
 }
 
-.input-group-addon{
-	border-right: -1px;
-	border-left: -1px;
-}
