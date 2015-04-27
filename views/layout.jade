@@ -4,22 +4,23 @@ html
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    div#header EPSI BINCH
-    div#menu
-      div#connection
-            - if (user)
-              a(href="/post/add").btn.btn-primary Ajouter un article
-              span |
-              a(href="/logout").btn.btn-danger Déconnexion         
-      div#identification
-            img(src="../images/profil.png").imgProfil
-            span bienvenue,
-              - if (user)
-                span #{user.user}
-              - else
-                span  invité    
-                a(href="/login").btn.btn-success Me connecter  
-    div#container!= body
+    div#wrap
+        div#header EPSI BINCH
+        div#menu
+          div#connection
+                - if (user)
+                  a(href="/post/add").btn.btn-primary Ajouter un article
+                  span |
+                  a(href="/logout").btn.btn-danger Déconnexion         
+          div#identification
+                img(src="../images/profil.png").imgProfil
+                span bienvenue,
+                  - if (user)
+                    span #{user.user}
+                  - else
+                    span  invité    
+                    a(href="/login").btn.btn-success Me connecter  
+        div#container!= body
     div#footer 
       div#info Propriété des développeurs de l'EPSI
       div#propriete EPSIBINCH @ 2015 
