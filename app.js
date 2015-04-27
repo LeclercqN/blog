@@ -91,7 +91,7 @@ app.post('/post/add', isUser, function(req, res) {
   });
 });
 
-
+// Delete function : thrown when someone click on the button delete (only logged users)
 app.post('/post/delete', isUser, function(req, res) {
   var values = {
       subject: req.body.subject
