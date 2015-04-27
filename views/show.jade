@@ -1,36 +1,30 @@
 h1 #{post.subject}
-
 div.body #{post.body}
-
 div.tags
-  for tag in post.tags
-    span #{tag}
+    for tag in post.tags
+        span #{tag}
 div Posté par: #{post.author.username}, le : #{moment(post.created).format('DD/MM/YYYY')} 
-
 h2 Commentaire utilisateurs
-
 - if (post.comments)
-    for comment in post.comments
-      div.comment   
+for comment in post.comments
+    div.comment
         div #{comment.body}
         div commenté par #{comment.name}
         div posté : #{moment(comment.created).fromNow()}
         - if (user)
-          a(href="/post/delete").btn.btn-danger Supprimer  
+        a(href="/post/delete").btn.btn-danger Supprimer
 - else
-      div aucun commentaire
-    
-
+div aucun commentaire
 h2 Ajouter un commentaire
 form(name="add-comment",method="post",action="/post/comment").col-md-5
-  input(type="hidden",name="id",value="#{post._id}")
-  div.form-group
-    div
-      label.input-group-addon Nom :
-    input(type="text", name="name").form-control
-  div.form-group
-    div
-      label.input-group-addon Commentaire :
-    textarea(name="comment", rows="10", cols="20").form-control
-  div.form-group
-    input(type="submit",name="send",value="Ajouter").btn.btn-success
+    input(type="hidden",name="id",value="#{post._id}")
+    div.form-group
+        div
+            label.input-group-addon Nom :
+        input(type="text", name="name").form-control
+    div.form-group
+        div
+            label.input-group-addon Commentaire :
+        textarea(name="comment", rows="10", cols="20").form-control
+    div.form-group
+        input(type="submit",name="send",value="Ajouter").btn.btn-success
