@@ -68,7 +68,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/post/add', isUser, function(req, res) {
-  res.render('add.jade', { title: 'Add new blog post '});
+  res.render('add.jade', { title: 'Ajouter un nouveau post'});
 });
 
 app.post('/post/add', isUser, function(req, res) {

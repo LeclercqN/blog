@@ -17,7 +17,8 @@ html
               - if (user)
                 span #{user.user}
               - else
-                span  invité
+                span  invité    
+                a(href="/login").btn.btn-success Me connecter  
     div#container!= body
     div#footer 
       div#info Propriété des développeurs de l'EPSI
