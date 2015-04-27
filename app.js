@@ -90,6 +90,28 @@ app.post('/post/add', isUser, function(req, res) {
     res.redirect('/');
   });
 });
+
+
+app.post('/post/delete', isUser, function(req, res) {
+  var values = {
+      subject: req.body.subject
+    , body: req.body.body
+    , tags: req.body.tags.split(',')
+    , state: 'published'
+    , created: new Date()
+    , modified: new Date()
+    , comments: []
+    , author: { 
+        username: req.session.user.user
+    }
+  };
+
+  db.post.remove(values, function(err, post) {
+    console.log(err, post);
+    res.redirect('/');
+  });
+});
+
 // Show post
 // Route param pre condition
 app.param('postid', function(req, res, next, id) {
