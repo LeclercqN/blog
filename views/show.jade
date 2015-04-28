@@ -4,8 +4,8 @@ div.body #{post.body}
 
 div.tags
   for tag in post.tags
-    span #{tag}
-div Posté par: #{post.author.username}, le : #{moment(post.created).format('DD/MM/YYYY')}
+    span ##{tag}
+div.taillePost Posté par: #{post.author.username}, le : #{moment(post.created).format('DD/MM/YYYY')}
 
 h2 Commentaire utilisateurs
 
@@ -15,7 +15,7 @@ form(name="delete-form",method="post",action="/post/delete")
       div.comment   
         div #{comment.body}
         div commenté par #{comment.name}
-        div posté : #{moment(comment.created).fromNow()}
+        div.taillePost Posté : #{moment(comment.created).format('DD-MM-YYYY HH:mm')}
         - if (user)
           input(type="submit",name="deleteComment",value="Supprimer").btn.btn-danger
 - else

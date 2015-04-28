@@ -8,6 +8,6 @@ for post in postList
     div#info 
       div.tags
         for tag in post.tags
-          span #{tag}
+          span ##{tag}
       div.post-time
-        span.heurepost #{moment(post.created).format('LLL')}
+        span.heurepost #{moment(post.created).format('DD/MM/YYYY')}

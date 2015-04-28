@@ -132,7 +132,7 @@ h2 {
 }
 
 .corp{
-	padding: 30px 30px 15px 30px;
+	padding: 15px;
 }
 
 .heurepost{
@@ -141,3 +141,10 @@ h2 {
 	float: right;
 }
 
+.tags {
+  color: blue;
+}
+
+.taillePost{
+	font-size: 12px;
+}
