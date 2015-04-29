@@ -92,21 +92,9 @@ app.post('/post/add', isUser, function(req, res) {
 });
 
 // Delete function : thrown when someone click on the button delete (only logged users)
-app.post('/post/delete', isUser, function(req, res) {
-  var values = {
-      subject: req.body.subject
-    , body: req.body.body
-    , tags: req.body.tags.split(',')
-    , state: 'published'
-    , created: new Date()
-    , modified: new Date()
-    , comments: []
-    , author: { 
-        username: req.session.user.user
-    }
-  };
+app.post('/post/delete/:postid', isUser, function(req, res) {
 
-  db.post.remove(values, function(err, post) {
+  db.post.remove({ _id: db.ObjectId(req.body.id) }, function(err, post) {
     console.log(err, post);
     res.redirect('/');
   });

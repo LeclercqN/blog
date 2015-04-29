@@ -6,21 +6,23 @@ html
   body
     div.wrap
         div#header
-            a(href="/") EPSI BINCH
+            img(src="../images/logo.png").logo
+
+            a(href="/")#start EPSI BINCH
         div#menu
           div#connection
                 - if (user)
                   a(href="/post/add").btn.btn-primary Ajouter un article
                   span |
-                  a(href="/logout").btn.btn-danger Déconnexion         
+                  a(href="/logout").btn.btn-danger Déconnexion
           div#identification
                 img(src="../images/profil.png").imgProfil
                 span bienvenue,
                   - if (user)
                     span #{user.user}
                   - else
-                    span  invité    
-                    a(href="/login").btn.btn-success Me connecter  
+                    span  invité
+                    a(href="/login").btn.btn-success Me connecter
         div#container!= body
 
 script(src='public/js/jquery-2.1.3.min.js')
